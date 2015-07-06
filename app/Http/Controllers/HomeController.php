@@ -6,6 +6,7 @@ use App\VideoAlbum;
 use App\PhotoAlbum;
 use Illuminate\Database\Eloquent;
 use Illuminate\Support\Facades\DB;
+use MaddHatter\LaravelFullcalendar\Calendar;
 
 class HomeController extends Controller {
 
@@ -43,32 +44,26 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
 
-//		TODO: abstract to model
-		$sliders = Photo::join('photo_albums', 'photo_albums.id', '=', 'photos.photo_album_id')->where('photos.slider',
-			1)->orderBy('photos.position', 'DESC')->orderBy('photos.created_at', 'DESC')->select('photos.filename',
-			'photos.name', 'photos.description', 'photo_albums.folder_id')->get();
+        $events = [];
 
-		$photoAlbums = PhotoAlbum::select(array(
-			'photo_albums.id',
-			'photo_albums.name',
-			'photo_albums.description',
-			'photo_albums.folder_id',
-			DB::raw('(select filename from ' . DB::getTablePrefix() . 'photos WHERE album_cover=TRUE and ' . DB::getTablePrefix() . 'photos.photo_album_id=' . DB::getTablePrefix() . 'photo_albums.id LIMIT 1) AS album_image'),
-			DB::raw('(select filename from ' . DB::getTablePrefix() . 'photos WHERE ' . DB::getTablePrefix() . 'photos.photo_album_id=' . DB::getTablePrefix() . 'photo_albums.id ORDER BY position ASC, id ASC LIMIT 1) AS album_image_first')
-		))->limit(8)->get();
+        $events[] = \Calendar::event(
+            "Valentine's Day", //event title
+            true, //full day event?
+            '2015-07-07', //start time, must be a DateTime object or valid DateTime format (http://bit.ly/1z7QWbg)
+            '2015-07-07', //end time, must be a DateTime object or valid DateTime format (http://bit.ly/1z7QWbg),
+            1 //optional event I
+        );
 
-		$videoAlbums = VideoAlbum::select(array(
-			'video_albums.id',
-			'video_albums.name',
-			'video_albums.description',
-			'video_albums.folder_id',
-			DB::raw('(select youtube from ' . DB::getTablePrefix() . 'videos WHERE album_cover=TRUE and ' . DB::getTablePrefix() . 'videos.video_album_id=' . DB::getTablePrefix() . 'video_albums.id LIMIT 1) AS album_image'),
-			DB::raw('(select youtube from ' . DB::getTablePrefix() . 'videos WHERE ' . DB::getTablePrefix() . 'videos.video_album_id=' . DB::getTablePrefix() . 'video_albums.id ORDER BY position ASC, id ASC LIMIT 1) AS album_image_first')
-		))->limit(8)->get();
+        $calendar = \Calendar::addEvents($events) //add an array with addEvents
+        ->setOptions([ //set fullcalendar options
+            'firstDay' => 1
+        ])/*->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            'viewRender' => 'function() {alert("Callbacks!");}'
+        ])*/;
 
-		return view('pages.home', compact('articles', 'sliders', 'videoAlbums', 'photoAlbums'));
+
+		return view('pages.home', compact('calendar'));
 
 		//return view('pages.welcome');
 	}

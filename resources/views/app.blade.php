@@ -26,10 +26,9 @@
           {{--href="{{asset('assets/site/css/lightbox.min.css')}}"/>--}}
 
     @yield('styles')
-
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,30 +36,36 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+{{--    <script src="{{asset('assets/site/js/jquery-2.1.1.min.js')}}"></script>--}}
+
     <link rel="shortcut icon" href="{{{ asset('assets/site/ico/favicon.ico') }}}">
 </head>
 <body>
 @include('partials.nav')
 
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
 @include('flash::message')
 <div class="container">
-@yield('content')
+    @yield('content')
 </div>
 @include('partials.footer')
 
+
 <!-- Scripts -->
 <script src="{{ elixir('js/site.js') }}"></script>
-
 {{-- TODO: Incorporate into elixir workflow. --}}
 {{--<script src="{{asset('assets/site/js/jquery.justifiedGallery.min.js')}}"></script>--}}
-{{--<script src="{{asset('assets/site/js/lightbox.min.js')}}"></script>--}}
+{{--<script src="{{asset('assets/site/js/jquery-2.1.1.min.js')}}"></script>--}}
+
+@yield('scripts')
 
 <script>
     $('#flash-overlay-modal').modal();
     $('div.alert').not('.alert-danger').delay(3000).slideUp(300);
 </script>
-
-@yield('scripts')
 
 </body>
 </html>

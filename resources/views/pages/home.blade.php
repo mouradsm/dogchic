@@ -7,14 +7,18 @@
     </div>
 </div>
 <div class="row">
-    Aqui vai o Calenrário
+    {!! $calendar->calendar() !!}
+    {!! $calendar->script() !!}
 </div>
-
-    
 
 @endsection
 
 @section('scripts')
     @parent
+
+@endsection
+@section('styles')
+    @parent
+
 @endsection
 @stop
