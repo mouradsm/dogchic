@@ -152,6 +152,7 @@ return [
 		Laracasts\Flash\FlashServiceProvider::class,
 		Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
     ],
 
@@ -200,6 +201,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Calendar'  => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
 
 		/*
 		 * 3rd Party Aliases...
