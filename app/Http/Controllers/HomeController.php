@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Article;
+use App\Event;
 use App\Photo;
 use App\VideoAlbum;
 use App\PhotoAlbum;
@@ -45,17 +46,11 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        $events = [];
+        $banhosClubinho = Event::where('class', '=','1')->get();
+        $banhosAvulsos  = Event::where('class', '=','2')->get();
 
-        $events[] = \Calendar::event(
-            "Valentine's Day", //event title
-            true, //full day event?
-            '2015-07-07', //start time, must be a DateTime object or valid DateTime format (http://bit.ly/1z7QWbg)
-            '2015-07-07', //end time, must be a DateTime object or valid DateTime format (http://bit.ly/1z7QWbg),
-            1 //optional event I
-        );
-
-        $calendar = \Calendar::addEvents($events) //add an array with addEvents
+        $calendar = \Calendar::addEvents($banhosClubinho,['color' => '#800'])
+            ->addEvents($banhosAvulsos,['color' => '#880'])
         ->setOptions([ //set fullcalendar options
             'firstDay' => 1,
             'lang' => 'pt-br'
@@ -65,8 +60,6 @@ class HomeController extends Controller {
 
 
 		return view('pages.home', compact('calendar'));
-
-		//return view('pages.welcome');
 	}
 
 }
