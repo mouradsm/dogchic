@@ -57,7 +57,8 @@ class HomeController extends Controller {
 
         $calendar = \Calendar::addEvents($events) //add an array with addEvents
         ->setOptions([ //set fullcalendar options
-            'firstDay' => 1
+            'firstDay' => 1,
+            'lang' => 'pt-br'
         ])/*->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
             'viewRender' => 'function() {alert("Callbacks!");}'
         ])*/;
