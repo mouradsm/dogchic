@@ -14,13 +14,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{ (Request::is('/') ? 'active' : '') }}">
-                    <a href="{!! URL::to('') !!}"><i class="fa fa-home"></i> Home</a>
+                    <a href="{!! URL::to('') !!}"><i class="fa fa-home"></i> Agenda</a>
                 </li>
-                <li class="{{ (Request::is('about') ? 'active' : '') }}">
-                    <a href="{!! URL::to('about') !!}">About</a>
+                <li class="{{ (Request::is('clubinhos') ? 'active' : '') }}">
+                    <a href="{!! URL::to('clubinhos') !!}">Clubinhos</a>
+                </li>
+                <li class="{{ (Request::is('clientes') ? 'active' : '') }}">
+                    <a href="{!! URL::to('clientes') !!}">Clientes</a>
                 </li>
                 <li class="{{ (Request::is('contact') ? 'active' : '') }}">
-                    <a href="{!! URL::to('contact') !!}">Contact</a>
+                    <a href="{!! URL::to('contact') !!}">Financeiro</a>
                 </li>
             </ul>
 

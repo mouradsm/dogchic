@@ -14,12 +14,18 @@ class PagesController extends Controller {
 
 	public function about()
 	{
-		return view('pages.about');
+		return view('pages.clientes');
 	}
 
 	public function contact()
 	{
 		return view('pages.contact');
 	}
+
+    public function clubinhos(){
+
+        return view('pages.clubinhos');
+
+    }
 
 }
