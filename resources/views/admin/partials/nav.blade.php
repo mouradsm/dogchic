@@ -22,6 +22,7 @@
             <span class="hidden-sm text"> Language</span>
         </a>
     </li>
+    {{--
     <li class="{{set_active('admin/news*')}}">
         <a href="#">
             <i class="glyphicon glyphicon-bullhorn"></i> News items
@@ -87,6 +88,6 @@
             <i class="glyphicon glyphicon-user"></i>
             <span class="hidden-sm text"> Users</span>
         </a>
-    </li>
+    </li>--}}
 </ul>
 </div>
