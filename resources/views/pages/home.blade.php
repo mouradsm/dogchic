@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="page-header">
-        <h2>Calendário de Clubinhos</h2>
+        <h2>Agenda de Tosas</h2>
     </div>
 </div>
 <div class="row">
