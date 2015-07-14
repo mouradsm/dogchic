@@ -1,31 +1,15 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
-
-class PagesController extends Controller {
-
-	public function welcome()
-	{
-		return view('pages.welcome');
-	}
-
-	public function about()
-	{
-		return view('pages.clientes');
-	}
-
-	public function contact()
-	{
-		return view('pages.contact');
-	}
-
-    public function clubinhos(){
-
-        return view('pages.clubinhos');
-
-    }
-
+class PagesController extends Controller
+{
+   public function home(){
+       return view('pages.home');
+   }
 }

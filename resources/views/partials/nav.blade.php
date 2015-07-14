@@ -1,59 +1,30 @@
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+    <header class="demo-drawer-header">
+        <img src="images/user.jpg" class="demo-avatar">
+        <div class="demo-avatar-dropdown">
+            <span>hello@email.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">arrow_drop_down</i>
             </button>
-            <a class="navbar-brand" href="#">DOGChic</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="{{ (Request::is('/') ? 'active' : '') }}">
-                    <a href="{!! URL::to('') !!}"><i class="fa fa-home"></i> Agenda</a>
-                </li>
-                <li class="{{ (Request::is('clubinhos') ? 'active' : '') }}">
-                    <a href="{!! URL::to('clubinhos') !!}">Clubinhos</a>
-                </li>
-                <li class="{{ (Request::is('clientes') ? 'active' : '') }}">
-                    <a href="{!! URL::to('clientes') !!}">Clientes</a>
-                </li>
-                <li class="{{ (Request::is('contact') ? 'active' : '') }}">
-                    <a href="{!! URL::to('contact') !!}">Financeiro</a>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                @if (Auth::guest())
-                    <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{!! URL::to('auth/login') !!}"><i
-                                    class="fa fa-sign-in"></i> Login</a></li>
-                    <li class="{{ (Request::is('auth/register') ? 'active' : '') }}"><a
-                                href="{!! URL::to('auth/register') !!}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }} <i
-                                    class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            @if(Auth::check())
-                                @if(Auth::user()->admin==1)
-                                    <li>
-                                        <a href="{!! URL::to('admin/dashboard') !!}"><i class="fa fa-tachometer"></i> Dashboard</a>
-                                    </li>
-                                @endif
-                                <li role="presentation" class="divider"></li>
-                            @endif
-                            <li>
-                                <a href="{!! URL::to('auth/logout') !!}"><i class="fa fa-sign-out"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                <button class="mdl-menu__item">hello@email.com</button>
+                <button class="mdl-menu__item">info@domain.net</button>
+                <button class="mdl-menu__item">Add another account...</button>
             </ul>
         </div>
-    </div>
-</nav>
+    </header>
+    <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">home</i>Home</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">inbox</i>Inbox</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">delete</i>Trash</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">report</i>Spam</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">forum</i>Forums</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">flag</i>Updates</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">local_offer</i>Promos</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">shopping_cart</i>Purchases</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">people</i>Social</a>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">help_outline</i></a>
+    </nav>
+</div>

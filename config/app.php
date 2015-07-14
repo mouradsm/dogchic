@@ -144,16 +144,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-		/*
-		 * 3rd Party Service Providers...
-		 */
-		Illuminate\Html\HtmlServiceProvider::class,
-		yajra\Datatables\DatatablesServiceProvider::class,
-		Laracasts\Flash\FlashServiceProvider::class,
-		Barryvdh\Debugbar\ServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
-
     ],
 
     /*
@@ -201,17 +191,6 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Calendar'  => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
-
-		/*
-		 * 3rd Party Aliases...
-		 */
-        'Form'      => Illuminate\Html\FormFacade::class,
-		'HTML'      => Illuminate\Html\HtmlFacade::class,
-		'Datatables'  =>yajra\Datatables\Datatables::class,
-		'Flash'     =>  laracasts\Flash\Flash::class,
-		'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
