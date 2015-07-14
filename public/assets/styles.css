@@ -107,6 +107,11 @@ html, body {
   max-width: 1080px;
 }
 
+.login-form {
+    max-width: 20%;
+    margin-top: 10%;
+}
+
 .demo-charts {
   -webkit-box-align: center;
   -webkit-align-items: center;
