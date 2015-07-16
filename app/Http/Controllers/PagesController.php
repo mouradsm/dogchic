@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use MaddHatter\LaravelFullcalendar\Calendar;
+use App\Event;
 
 class PagesController extends Controller
 {
@@ -14,7 +16,17 @@ class PagesController extends Controller
     }
 
    public function home(){
-       return view('pages.home');
+       $banhosClubinho = Event::where('class', '=','1')->get();
+       $banhosAvulsos  = Event::where('class', '=','2')->get();
+       $calendar = \Calendar::addEvents($banhosClubinho,['color' => '#800'])
+           ->addEvents($banhosAvulsos,['color' => '#880'])
+           ->setOptions([ //set fullcalendar options
+               'firstDay' => 1,
+               'lang' => 'pt-br'
+           ])/*->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            'viewRender' => 'function() {alert("Callbacks!");}'
+        ])*/;
+       return view('pages.home', compact('calendar'));
    }
 
    public function agenda(){
