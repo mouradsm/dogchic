@@ -1,3 +1,4 @@
+{{--
 <header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">@yield('header')</span>
@@ -20,4 +21,4 @@
             <li class="mdl-menu__item">Legal information</li>
         </ul>
     </div>
-</header>
+</header>--}}

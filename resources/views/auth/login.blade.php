@@ -10,8 +10,8 @@
   <form method="POST" action="/auth/login" class="mdl-cell mdl-cell--12-col">
       {!! csrf_field() !!}
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" id="email" type="email" name="email" value="{{ old('email') }}">
-          <label class="mdl-textfield__label" for="email">Email</label>
+          <input class="mdl-textfield__input" id="email" type="text" name="username" ">
+          <label class="mdl-textfield__label" for="email">Usuário</label>
       </div>
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
