@@ -22,3 +22,24 @@
         </ul>
     </div>
 </header>--}}
+<div class="navbar-fixed">
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Perfil</a></li>
+        {{--<li><a href="#!">two</a></li>--}}
+        <li class="divider"></li>
+        <li><a href="auth/logout">Logout</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">DOGChic</a>
+            <ul class="right hide-on-med-down">
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#">Clubinhos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{Auth::user()->name}}<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

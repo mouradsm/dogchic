@@ -26,9 +26,7 @@
 
 </head>
 <body>
-
-
-{{--@include('partials.header')--}}
+@include('partials.header')
 @include('partials.nav')
 
 <div class="container">
