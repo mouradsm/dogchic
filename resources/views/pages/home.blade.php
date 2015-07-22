@@ -7,8 +7,5 @@
 @endsection
 
 @section('content')
-    <div id="calendar-container" class="row">
-            {!! $calendar->calendar() !!}
-            {!! $calendar->script() !!}
-    </div>
+
 @endsection
