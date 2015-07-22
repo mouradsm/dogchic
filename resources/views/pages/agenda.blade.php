@@ -17,10 +17,16 @@
                         <i class="large material-icons">mode_edit</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-                        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                        <li><a class="btn-floating tooltipped red"
+                               data-position="left" data-delay="50" data-tooltip="Excluir Evento">
+                                <i class="material-icons">delete</i></a></li>
+                        {{--<li><a class="btn-floating yellow darken-1"><i class="material-icons">dte</i></a></li>--}}
+                        <li><a class="btn-floating tooltipped blue"
+                               data-position="left" data-delay="50" data-tooltip="Editar Evento">
+                                <i class="material-icons">mode_edit</i></a></li>
+                        <li><a class="btn-floating tooltipped green"
+                               data-position="left" data-delay="50" data-tooltip="Novo Evento">
+                                <i class="material-icons">event</i></a></li>
                     </ul>
                 </div>
         </div>
