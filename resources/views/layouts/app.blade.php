@@ -22,13 +22,18 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
+
+    <link rel="stylesheet" href="css/app.css"/>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script src="assets/script.js"></script>
 
 </head>
 <body>
-@include('partials.header')
-@include('partials.nav')
-
+<header>
+    @include('partials.header')
+    @include('partials.nav')
+</header>
 <div class="container">
     @yield('content')
 </div>
