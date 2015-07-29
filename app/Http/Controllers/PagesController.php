@@ -22,6 +22,7 @@ class PagesController extends Controller
    public function agenda(){
        $banhosClubinho = Event::where('class', '=','1')->get();
        $banhosAvulsos  = Event::where('class', '=','2')->get();
+
        $calendar = \Calendar::addEvents($banhosClubinho,['color' => '#800'])
            ->addEvents($banhosAvulsos,['color' => '#880'])
            ->setOptions([ //set fullcalendar options
