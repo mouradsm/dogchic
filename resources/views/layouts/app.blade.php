@@ -10,7 +10,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css" rel="stylesheet">
     {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--}}
 
-    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/app.css"/>
 
     <script src="../js/jquery.min.js"></script>

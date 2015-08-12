@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('header','Home')
+           @section('header','Home')
 
-@section('sidebar')
+           @section('sidebar')
 
-@endsection
+           @endsection
 
-@section('content')
+           @section('content')
 
-@endsection
+           @endsection

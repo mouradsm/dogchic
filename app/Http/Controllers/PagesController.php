@@ -35,4 +35,8 @@ class PagesController extends Controller
 
        return view('pages.agenda', compact('calendar'));
    }
+
+    public function clientes(){
+        return view('pages.clientes');
+    }
 }
