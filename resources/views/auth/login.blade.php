@@ -8,10 +8,11 @@
 </head>
 <body>
 <div class="container">
+
         <form method="POST" action="/auth/login" class="col s12 l12 ">
             {!! csrf_field() !!}
             <div class="row">
-                <div class="input-field col s12 l4 m6 offset-m3 offset-l4 valign">
+                <div class="input-field col s12 l4 m6 offset-m3 offset-l4">
                     <input id="email" type="text" name="username">
                     <label for="email">Usuário</label>
                 </div>
