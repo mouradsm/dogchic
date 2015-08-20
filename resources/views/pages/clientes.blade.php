@@ -4,10 +4,8 @@
 
 @section('content')
     <div class="row">
-         <div class="fixed-action-btn" style="bottom: 20px; right: 24px;">
-            <a class="btn-floating btn-large tooltipped green"
-                                           data-position="left" data-delay="50" data-tooltip="Cadastrar Cliente">
-                                            <i class="material-icons">add</i></a></li>
+        <div class="col s12 l4 offset-l4 search-fixed">
+            <input type="search"/>
         </div>
     </div>
     <div class="row">
@@ -27,4 +25,13 @@
         </div>
     @endfor
   </div>
+
+    <div class="fixed-action-btn" style="bottom: 20px; right: 24px;">
+      <a class="btn-floating btn-large tooltipped green" data-position="left"
+       data-delay="50" data-tooltip="Cadastrar Cliente">
+         <i class="material-icons">add</i>
+      </a>
+    </div>
+
+
 @endsection

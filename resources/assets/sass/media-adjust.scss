@@ -1,12 +1,14 @@
-@media(min-width: 600px ) and (max-width: 992px) {
+$break-small: 600px;
+$break-large: 992px;
+
+@media (min-width: $break-small) and (max-width: $break-large){
   form {
     margin-top: 25%;
-
   }
 }
-@media(min-width: 992px ) {
+@media (min-width: $break-large ) {
   form {
-    margin-top: 25%;
+    margin-top: 20%;
 
   }
 }

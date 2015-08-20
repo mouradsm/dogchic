@@ -12,9 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass(['app.scss','media-adjust.scss']);
+    mix.sass(['app.scss']);
 
 });
+
+elixir(function(mix) {
+    mix.sass(['media-adjust.scss'],'public/css/media-adjust.css');
+
+});
+
 elixir(function(mix){
     mix.copy('resources/vendor/materialize/dist/css/materialize.min.css','public/css/materialize.min.css');
     mix.copy('resources/vendor/materialize/dist/js/materialize.min.js','public/js/materialize.min.js');
@@ -22,3 +28,4 @@ elixir(function(mix){
     mix.copy('resources/vendor/materialize/dist/font','public/font');
     mix.copy('resources/font/Material-Icons.woff','public/font/Material-Icons.woff');
 });
+
