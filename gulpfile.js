@@ -12,7 +12,8 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass(['app.scss','media-adjust.scss']);
+
 });
 elixir(function(mix){
     mix.copy('resources/vendor/materialize/dist/css/materialize.min.css','public/css/materialize.min.css');
