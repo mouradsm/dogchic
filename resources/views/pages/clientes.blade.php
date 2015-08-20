@@ -3,11 +3,9 @@
 @section('title','Clientes')
 
 @section('content')
-    <div class="row">
-        <div class="col s12 l4 offset-l4 search-fixed">
+        <div class="search">
             <input type="search"/>
         </div>
-    </div>
     <div class="row">
     @for($i= 1; $i <= 21; $i++)
         <div class="col s12 m4 l4 ">
