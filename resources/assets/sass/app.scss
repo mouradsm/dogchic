@@ -136,3 +136,16 @@ a.button-collapse.top-nav {
   -moz-font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media(min-width: 600px ) and (max-width: 992px) {
+  form {
+    margin-top: 25%;
+
+  }
+}
+@media(min-width: 992px ) {
+  form {
+    margin-top: 25%;
+
+  }
+}
