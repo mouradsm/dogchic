@@ -8,7 +8,7 @@ class Animal extends Model
 {
     public $timestamps = false;
 
-    public function Cliente()
+    public function cliente()
     {
         return $this->belongsTo('App\Cliente');
     }

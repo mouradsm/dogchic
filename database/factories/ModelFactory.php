@@ -33,7 +33,7 @@ $factory->define(App\Animal::class, function (Faker\Generator $faker) {
         'porte' => $faker->randomElement(['P', 'M', 'G']),
         'cor' => $faker->colorName,
         'idade' => $faker->randomElement(['A', 'F']),
-        'obs' => $faker->sentence()
+        'obs' => $faker->sentence(),
     ];
 });
 

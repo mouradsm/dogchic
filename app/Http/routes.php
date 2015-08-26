@@ -12,8 +12,10 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get("/agenda",'PagesController@agenda');
-Route::get("/clientes",'PagesController@clientes');
+/*Route::get("/agenda",'PagesController@agenda');
+Route::get("/clientes",'PagesController@clientes');*/
+
+Route::resource('clientes','ClienteController',['middleware' => 'auth']);
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

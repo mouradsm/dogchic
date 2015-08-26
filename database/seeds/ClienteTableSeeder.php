@@ -14,12 +14,10 @@ class ClienteTableSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('clientes')->truncate();
         DB::table('animals')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-
-        factory(App\Cliente::class, 5)
-            ->create()
-            ->each(function ($u) {
-                $u->animais()->save(factory(App\Animal::class)->make());
+        factory('App\Cliente', 10)->create()->each(function(App\Cliente $client) {
+                factory('App\Animal',rand(1,5))->create(['cliente_id' => $client->id]);
             });
     }
 }

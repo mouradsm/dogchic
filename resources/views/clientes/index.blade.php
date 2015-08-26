@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('...layouts.app')
 
 @section('title','Clientes')
 
@@ -7,13 +7,13 @@
             <input type="search"/>
         </div>
     <div class="row">
-    @for($i= 1; $i <= 21; $i++)
+    @foreach($clientes as $cliente)
         <div class="col s12 m4 l4 ">
           <div class="card darken-1 hoverable">
             <div class="card-content ">
-              <span class="card-title blue-grey-text">Diego Moura</span>
+              <span class="card-title blue-grey-text">{{$cliente->nome}}</span>
               <p><b>Endereço:</b> Rua Parazinho Lote 28 Quadra 10</p>
-              <p><b>Animais: </b>Animal 1, Animal 2, Animal N</p>
+              <p><b>Animais:</b> {{$cliente->animais->count()}}</p>
             </div>
             <div class="card-action right-align">
               <a href="#">Mapa</a>
@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-    @endfor
+    @endforeach
   </div>
 
     <div class="fixed-action-btn" style="bottom: 20px; right: 24px;">
