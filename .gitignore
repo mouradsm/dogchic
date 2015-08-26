@@ -1,5 +1,5 @@
 # Assets
-composer.lock
+#composer.lock
 composer.phar
 /node_modules
 /vendor
