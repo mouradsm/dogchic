@@ -12,7 +12,7 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::drop('events');
+        Schema::dropIfExists('events');
 
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
