@@ -12,4 +12,9 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Animal');
     }
+
+    public function endereco()
+    {
+        return $this->hasMany('App\Endereco');
+    }
 }
