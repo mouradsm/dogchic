@@ -17,12 +17,12 @@ class CreateEnderecosTable extends Migration
             $table->string('rua');
             $table->integer('numero');
             $table->string('cidade');
+            $table->string('bairro');
             $table->string('estado');
             $table->integer('cep');
             $table->float('latitude',10,6);
             $table->float('longitude',10,6);
             $table->boolean('status');
-
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });

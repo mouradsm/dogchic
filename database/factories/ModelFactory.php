@@ -21,12 +21,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
+    $faker->addProvider(new Faker\Provider\pt_BR\Person($faker));
+
     return [
         'nome' => $faker->name,
     ];
 });
 
 $factory->define(App\Animal::class, function (Faker\Generator $faker) {
+
+    $faker->addProvider(new Faker\Provider\pt_BR\Person($faker));
+
     return [
         'nome'  => $faker->firstNameMale,
         'raca'  => $faker->company,
@@ -38,10 +43,14 @@ $factory->define(App\Animal::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Endereco::class, function (Faker\Generator $faker) {
+
+    $faker->addProvider(new Faker\Provider\pt_BR\Address($faker));
+
     return [
         'rua'       => $faker->streetName,
         'numero'    => $faker->buildingNumber,
         'cidade'    => $faker->city,
+        'bairro'    => $faker->state,
         'estado'    => $faker->stateAbbr,
         'cep'       => $faker->postcode,
         'latitude'  => $faker->latitude,

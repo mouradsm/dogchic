@@ -12,11 +12,11 @@
           <div class="card darken-1 hoverable">
             <div class="card-content ">
               <span class="card-title blue-grey-text">{{$cliente->nome}}</span>
-              <p><b>Endereço:</b> Rua Parazinho Lote 28 Quadra 10</p>
+              <p><b>Endereço:</b> {{$cliente->endereco[0]->rua . ', '.  $cliente->endereco[0]->numero.', '.$cliente->endereco[0]->cidade }}</p>
               <p><b>Animais:</b> {{$cliente->animais->count()}}</p>
             </div>
             <div class="card-action right-align">
-              <a href="#">Mapa</a>
+              <a target='_blank' href="http://maps.google.com/maps?z=12&t=m&q=loc:{{$cliente->endereco[0]->latitude}}+{{$cliente->endereco[0]->longitude}}">Mapa</a>
               {{--<a href="#">This is a link</a>--}}
             </div>
           </div>
